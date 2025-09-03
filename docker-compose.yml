@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  s3proxy:
+    image: openjdk:11-jre-slim
+    container_name: s3proxy
+    restart: unless-stopped
+    volumes:
+      - /root/s3proxy/s3proxy.conf:/opt/s3proxy/s3proxy.conf:ro
+      - /root/s3proxy/s3proxy.jar:/opt/s3proxy/s3proxy.jar:ro
+    working_dir: /opt/s3proxy
+    command: ["java", "-jar", "/opt/s3proxy/s3proxy.jar", "--properties", "/opt/s3proxy/s3proxy.conf"]
+    networks:
+       marugo:
+         ipv4_address: 10.8.1.8
+
+networks:
+   marugo:
+     external: true

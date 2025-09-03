@@ -6,6 +6,7 @@ wget https://repo1.maven.org/maven2/org/gaul/s3proxy/2.7.0/s3proxy-2.7.0-jar-wit
 
 docker-compose.yml :
 
+```bash
 version: "3.8"
 
 services:
@@ -25,8 +26,8 @@ services:
 networks:
    marugo:
      external: true
-
-
+```bash
+```bash
 s3proxy.conf :
 
 # Endpoint S3 Proxy
@@ -40,3 +41,4 @@ jclouds.provider=azureblob
 jclouds.identity=<AZURE_ACCOUNT_NAME>
 jclouds.credential=<AZURE_ACCESS_KEY>
 jclouds.endpoint=https://<AZURE_ACCOUNT_NAME>.blob.core.windows.net
+```bash

@@ -26,8 +26,7 @@ services:
 networks:
    marugo:
      external: true
-```bash
-```bash
+
 s3proxy.conf :
 
 # Endpoint S3 Proxy
@@ -41,4 +40,4 @@ jclouds.provider=azureblob
 jclouds.identity=<AZURE_ACCOUNT_NAME>
 jclouds.credential=<AZURE_ACCESS_KEY>
 jclouds.endpoint=https://<AZURE_ACCOUNT_NAME>.blob.core.windows.net
-```bash
+
